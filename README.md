@@ -110,12 +110,12 @@ Install with npm:
 Then send Keen IO an event from anywhere in your code:
 
     :::javascript
-    var keen = require('keen.io');
+    var keenIO = require('keen.io');
 
     // Configure instance. Only projectId and writeKey are required to send data.
-    var keen = keen.configure({
-        projectId: "<project_id>",
-        writeKey: "<write_key>"
+    var keen = keenIO.configure({
+        projectId: process.env['KEEN_PROJECT_ID'],
+        writeKey: process.env['KEEN_WRITE_KEY']
     });
 
     keen.addEvent("sign_ups", {"username": "lloyd", "referred_by": "harry"}, function(err, res) {
