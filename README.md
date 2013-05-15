@@ -2,7 +2,7 @@ The [Keen IO add-on](http://addons.heroku.com/keen) is a [Heroku add-on](http://
 
 Keen IO allows developers to build powerful analytics features directly into their apps with ease. It supports arbitrary event collection, analysis over API, and easy to use SDKs to collect, analyze, and visualize your data.
 
-Keen IO is accessible via an API and has supported client libraries for Java|Ruby|Python|Node.js.
+Keen IO is accessible via an API and has supported client libraries for Java, Ruby, Python, and Node.js.
 
 ## Provisioning the add-on
 
@@ -16,6 +16,7 @@ A list of all plans available can be found [here](http://addons.heroku.com/keen)
     $ heroku addons:add keen
     -----> Adding keen to sharp-mountain-4005... done, v18 (free)
 
+
 Once Keen IO has been added, a number of environment variables/settings will be available for your app configuration. They are:
 
 + KEEN_PROJECT_ID - The Project ID generated for your add-on.
@@ -23,11 +24,12 @@ Once Keen IO has been added, a number of environment variables/settings will be 
 + KEEN_READ_KEY - The Read Key generated for your add-on.
 + KEEN_API_URL - The URL to make API requests to.
 
-Once Keen IO has been added a `ADDON_CONFIG_NAME` setting will be available in the app configuration and will contain the [[variable purpose, i.e. "canonical URL used to access the newly provisioned Keen IO service instance."]]. This can be confirmed using the `heroku config:get` command.
+Once Keen IO has been added an `ADDON_CONFIG_NAME` setting will be available in the app configuration and will contain the variable purpose, i.e. "canonical URL used to access the newly provisioned Keen IO service instance.". This can be confirmed using the `heroku config:get` command.
 
     :::term
     $ heroku config:get KEEN_API_URL
     https://api.keen.io
+
 
 After installing Keen IO the application should be configured to fully integrate with the add-on.
 
@@ -41,11 +43,12 @@ After provisioning the add-on it’s necessary to locally replicate the config v
 Though less portable it’s also possible to set local environment variables using `export ADDON_CONFIG_NAME=value`.
 </div>
 
-Use [Foreman](config-vars#local-setup) to configure, run and manage process types specified in your app’s [Procfile](procfile). Foreman reads configuration variables from an .env file. Use the following command to add the ADDON_CONFIG_NAME values retrieved from heroku config to `.env`.
+Use [Foreman](config-vars#local-setup) to configure, run and manage process types specified in your app’s [Procfile](procfile). Foreman reads configuration variables from an .env file. Use the following command to add the Keen IO config values retrieved from heroku config to `.env`.
 
     :::term
     $ heroku config -s | grep ADDON_CONFIG_NAME >> .env
     $ more .env
+
 
 <p class="warning" markdown="1">
 Credentials and other sensitive configuration values should not be committed to source-control. In Git exclude the .env file with: `echo .env >> .gitignore`.
