@@ -24,7 +24,7 @@ Once Keen IO has been added, a number of environment variables/settings will be 
 + KEEN_READ_KEY - The Read Key generated for your add-on.
 + KEEN_API_URL - The URL to make API requests to.
 
-Once Keen IO has been added an `ADDON_CONFIG_NAME` setting will be available in the app configuration and will contain the variable purpose, i.e. "canonical URL used to access the newly provisioned Keen IO service instance.". This can be confirmed using the `heroku config:get` command.
+This can be confirmed using the `heroku config:get` command.
 
     :::term
     $ heroku config:get KEEN_API_URL
@@ -40,13 +40,13 @@ After installing Keen IO the application should be configured to fully integrate
 After provisioning the add-on it’s necessary to locally replicate the config vars so your development environment can operate against the service.
 
 <div class="callout" markdown="1">
-Though less portable it’s also possible to set local environment variables using `export ADDON_CONFIG_NAME=value`.
+Though less portable it’s also possible to set local environment variables using `export KEEN_API_URL=value`.
 </div>
 
 Use [Foreman](config-vars#local-setup) to configure, run and manage process types specified in your app’s [Procfile](procfile). Foreman reads configuration variables from an .env file. Use the following command to add the Keen IO config values retrieved from heroku config to `.env`.
 
     :::term
-    $ heroku config -s | grep ADDON_CONFIG_NAME >> .env
+    $ heroku config -s | grep KEEN >> .env
     $ more .env
 
 
