@@ -1,4 +1,4 @@
-[Keen IO](http://addons.heroku.com/keen) is an [add-on](http://addons.heroku.com) for doing custom app analytics in minutes instead of days.
+The [Keen IO add-on](http://addons.heroku.com/keen) is a [Heroku add-on](http://addons.heroku.com) for doing custom app analytics in minutes instead of days.
 
 Keen IO allows developers to build powerful analytics features directly into their apps with ease. It supports arbitrary event collection, analysis over API, and easy to use SDKs to collect, analyze, and visualize your data.
 
