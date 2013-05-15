@@ -69,8 +69,6 @@ Update application dependencies with bundler.
 Then send Keen IO an event from anywhere in your code:
 
     :::ruby
-    require "keen"
-
     Keen.publish("sign_ups", { :username => "lloyd", :referred_by => "harry" })
 
 This will publish an event to the 'sign_ups' collection with the `username` and `referred_by` properties set.
