@@ -81,15 +81,9 @@ pip install keen
 Then send Keen IO an event from anywhere in your code:
 
 ```python
-from keen.client import KeenClient
+import keen
 
-project_id = "<YOUR_PROJECT_ID>"
-write_key  = "<YOUR_WRITE_KEY>"
-client = KeenClient(
-    project_id, 
-    write_key=write_key
-)
-client.add_event("sign_ups", {
+keen.add_event("sign_ups", {
     "username": "lloyd",
     "referred_by": "harry"
 }
@@ -138,9 +132,6 @@ Then send Keen IO an event from anywhere in your code:
 
 ```java
 protected void track() {
-    // initialize the Keen Client with your Project ID.
-    KeenClient.initialize("<YOUR_PROJECT_ID>", "<YOUR_WRITE_KEY>", "<YOUR_READ_KEY>");
-
     // create an event to upload to Keen
     Map<String, Object> event = new HashMap<String, Object>();
     event.put("username", "lloyd");
