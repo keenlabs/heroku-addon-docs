@@ -117,7 +117,6 @@ keen.addEvent("sign_ups", {"username": "lloyd", "referred_by": "harry"}, functio
         console.log("Hooray, it worked!");
     }
 });
-Keen.publish("sign_ups", { :username => "lloyd", :referred_by => "harry" })
 ```
 
 This will publish an event to the 'sign_ups' collection with the `username` and `referred_by` properties set.
@@ -146,7 +145,6 @@ protected void track() {
     }
 
 }
-Keen.publish("sign_ups", { :username => "lloyd", :referred_by => "harry" })
 ```
 
 This will publish an event to the 'sign_ups' collection with the `username` and `referred_by` properties set.
